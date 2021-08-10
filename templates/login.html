@@ -1,56 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/style_editar.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/style_login.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Blue Trip | Login</title>
 </head>
 
 <body>
 
-    <!-- <section id="formulario">
-        <form action='/send' method="POST">
-
-            <div id="login">
-                <label for="usuario">Nome</label>
-                <input id="usuario" name="nome" type="text">
-            </div>
-
-            <div id="senha">
-                <label for="senha">Senha</label>
-                <input id="senha" name="senha" type="text">
-            </div>
+    <section id="login">
+        
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul class=flashes>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        
+        <form action='/auth' method="POST">
+            <a href="/">
+                <i class="fa fa-home" aria-hidden="true"></i>
+            </a>
             
+
+            <h1>Acesso a área administrativa</h1>
+            <input type="password" placeholder="Digite a senha" id="senha" name="senha">
+            <button type="submit">Enviar</button>
+
         </form>
-    </section> -->
-
-    <!-- <div class="container">
-        <div class="center">
-
-            <form action='/send' method="POST">
-
-                <div id="login">
-                    <label for="usuario">Nome</label>
-                    <input id="usuario" name="nome" type="text">
-                </div>
-
-                <div id="senha">
-                    <label for="senha">Senha</label>
-                    <input id="senha" name="senha" type="text">
-                </div>
-
-            </form>
-        </div>
-    </div> -->
-
-    <div id="parent">
-        <form id="form_login">
-         <label for="">jweeiwqeiwu</label>
-        </form>
-    </div>
+    </section>
 
 </body>
 

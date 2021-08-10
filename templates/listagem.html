@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/style_listagem.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    {% if viagem == '' %}
+    <article id="lista">
+        <table>
+
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Destino</th>
+                    <th>Link da imagem</th>
+                    <th>Preço</th>
+                    <th>Descrição</th>
+                    <th>Tipo da viagem</th>
+                    <th style="text-align:center">Edição</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for i in viagens %}
+                <tr>
+                    <td>{{i.id}}</td>
+                    <td>{{i.destino}}</td>
+                    <td><a href="{{i.link}}" target="_blank">{{i.link}}</a></td>
+                    <td><a href="{{i.preco}}" target="_blank">{{i.preco}}</a></td>
+                    <td><a href="{{i.descricao}}" target="_blank">{{i.descricao}}</a></td>
+                    <td><a href="{{i.tipo_viagem}}" target="_blank">{{i.tipo_viagem}}</a></td>
+                    <td><a href="/edit/{{i.id}}">Editar</a></td>
+                    <td><a href="/{{i.id}}">Apagar</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+    </article>
+    {% endif %}
+    <aside id="left">
+        <!-- Código copiado da documentação: https://flask.palletsprojects.com/en/2.0.x/patterns/flashing/ -->
+
+
+        <h1>Administração</h1>
+        <ul>
+            <a href="/admin" id="btn-listar">
+                <li>
+                    <i class="fa fa-plus-square" aria-hidden="true"></i>
+                    Criar viagens
+                </li>
+            </a>
+            <a href="/">
+                <li>
+                    <i class="fa fa-home" aria-hidden="true"></i>
+                    Home
+                </li>
+            </a>
+            <a href="/logout">
+                <li>
+                    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
+                    Sair
+                </li>
+            </a>
+
+        </ul>
+    </aside>
+
+</body>
+
+</html>
