@@ -91,8 +91,6 @@ def login():
 
 
 
-
-
 @app.route('/auth', methods=['GET', 'POST'])
 def auth():
    if request.form['senha'] == 'Bluetrip':
@@ -107,7 +105,6 @@ def auth():
 def logout():
    session['usuario_logado'] = None
    return redirect('/login')
-
 
 
 
@@ -142,18 +139,19 @@ def edit(id):
       viagem.link = request.form['link']
       viagem.tipo_viagem = request.form['tipo_viagem']
       db.session.commit() # Confirma a operação
-      return redirect('/admin') #Redireciona para a rota adm
+      return redirect('/listagem') #Redireciona para a rota adm
    # Renderiza a página adm.html passando o projetoEdit (projeto a ser editado)
-   return render_template('admin.html', viagem=viagem, viagens=viagens)
+   return render_template('listagem.html', viagem=viagem, viagens=viagens)
 
 
 # Rota delete
 @app.route('/delete/<id>') 
 def delete(id):
-   viagem = Viagem.query.get(id) # Busca um projeto no banco através do id
-   db.session.delete(viagem) # Apaga o projeto no banco de dados
+   viagemdel = Viagem.query.get(id) # Busca um projeto no banco através do id
+   db.session.delete(viagemdel) # Apaga o projeto no banco de dados
    db.session.commit() # Confirma a operação
-   return redirect('/admin') #Redireciona para a rota adm
+   flash('Viagem deletada do catálogo com sucesso!')
+   return render_template('listagem.html', viagemdel=viagemdel) #Redireciona para a rota adm
 
 if __name__ == '__main__':
    db.create_all() # Cria o banco assim que a aplicação é ligada.
