@@ -15,29 +15,29 @@
             <h2>Blue Trip</h2>
             <li><a href="/">Início</a></li>
             <li><a href="/missao">Nossa missão</a></li>
-            <li><a href="/pacotes">Pacotes</a></li>
-            <li><a href="/perfil">Quem somos</a></li>
         </ul>
     </nav>
 
 
     <!-- Section mãe para os dois tipos de viagem: internacional e nacional -->
     <section id="viagens">
+       
         {% for i in viagens %}
         <div>
             <img src="{{i.link}}" alt="...">
+            <h2>{{i.destino}}</h2>
+            <h3>{{i.tipo_viagem}}</h3>
             <p>{{i.descricao}}</p>
+            <p>A partir de R${{i.preco}},00</p>
         </div>
         {% endfor %}
-
+        
     </section>
 
     <footer>
         <ul>
             <li>
-                <a href="perfil.html">
-                    <h2></h2>Entre em contato</h2>
-                </a>
+                <a href="/perfil">Quem Somos</a>
 
             </li>
         </ul>

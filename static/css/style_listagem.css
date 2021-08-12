@@ -5,6 +5,7 @@
   margin: 0;
   padding: 0;
   font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
 }
 
   
@@ -89,7 +90,6 @@ nav ul li a{
   background-color: #fff;
   width: 50%;
   position: relative;
-  box-shadow: rgba(149, 157, 165, .5) 0px 8px 24px;
   border-radius: 1rem;
   }
   
@@ -115,9 +115,9 @@ nav ul li a{
   }
   
   form button {
-  border: 1px solid #0066ff;
+  border: 1px solid #023047;
   background-color: #fff;
-  color: #0066ff;
+  color: #023047;
   font-size: 1rem;
   font-weight: 600;
   padding: 1rem;
@@ -132,7 +132,7 @@ nav ul li a{
   }
   
   form button:hover {
-  background-color: #0066ff;
+  background-color: #0a4c5c;
   color: #fff;
   }
   
@@ -180,7 +180,6 @@ nav ul li a{
     padding: 3rem;
     background-color: #fff;
     width: 65%;
-    box-shadow: rgba(149, 157, 165, .5) 0px 8px 24px;
     border-radius: 1rem;
   }
   
@@ -200,13 +199,13 @@ nav ul li a{
   
   article#lista table a {
   padding: 1rem;
-  color: #0066ff;
+  color: #023047;
   text-decoration: none;
   transition: all 0.3s ease-in-out;
   }
   
   article#lista table a:hover{
-    color: #aacbfb;
+    color: #0660e6;
   }
   
   article#edit {
@@ -222,133 +221,9 @@ nav ul li a{
     padding-left: 30%;
     padding-top: 5%;
   }
-  
-  /* Estilos do modal */
-  
-  section.modal{
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    background-color: #00000080;
-    z-index: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    pointer-events: auto;
-  }
-  
-  section.modal div#card{
-    width: 30rem;
-    position: relative;
-    background-color: #fff;
-    border-radius: .5rem;
-  }
-  
-  section.modal div#card h2{
-    padding: 2rem;
-    margin: 0;
-    color: #0130ec;
-  }
-  
-  section.modal div#card a#fechar{
-    position: absolute;
-    right: 0;
-    top: 0;
-    font-size: 2rem;
-    color: #ff0101;
-    padding: 1.5rem;
-  }
-  
-  section.modal div#card a#fechar:hover{
-    color: #fd9b9b;
-  }
-  
-  section.modal div#card hr{
-    width: 90%;
-    margin: 0 auto;
-  }
-  
-  section.modal div#card p{
-    padding: 2rem;
-    text-align: center;
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
-  
-  section.modal div#card div#btns{
-    display: flex;
-    justify-content: center;
-    padding: 0 2rem 2rem 2rem;
-  }
-  
-  section.modal div#card div#btns a{
-    text-decoration: none;
-    padding: .9rem;
-    border-radius: .5rem;
-    width: 7rem;
-    text-align: center;
-  }
-  
-  section.modal div#card div#btns a.btn-cancelar{
-    background-color: #fff;
-    color: #ff0101;
-    border: solid 1px #ff0101;
-    margin-right: 1rem;
-    transition: all .5s ease-out;
-  }
-  
-  section.modal div#card div#btns a.btn-cancelar:hover{
-    background-color: #ff0101;
-    color: #fff;
-  }
-  
-  section.modal div#card div#btns a.btn-apagar{
-    background-color: #fff;
-    color: #0130ec;
-    border: solid 1px #0130ec;
-    transition: all .5s ease-out;
-  }
-  
-  section.modal div#card div#btns a.btn-apagar:hover{
-    background-color: #0130ec;
-    color: #fff;
-  }
-  
-  
-  
-  /* Fim dos estilos do modal */
-  
-  
+
   /* Quando a tela tiver no máximo 1682 de largura, faça o que tiver dentro desse @media */
-  @media screen and (max-width: 1682px){
-    aside#right{
-      display: none;
-    }
-  
-    aside#left{
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      width: 100%;
-      padding: 1rem;
-      left: 0;
-      top: 0;
-      border-radius: 0;
-      position: relative;
-    }
-  
-    aside#left h1{
-      margin-right: auto;
-    }
-  
-    aside#left ul{
-      display: flex;
-      padding: 0;
-      margin-right: 5rem;
-    }
-  
+  @media screen and (max-width: 1682px){  
     form{
       width: 100%;
     }
@@ -364,96 +239,3 @@ nav ul li a{
       width: 100%;
     }
   }
-#modal
-
-  section.modal{
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    background-color: #00000080;
-    z-index: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    pointer-events: auto;
-  }
-  
-  section.modal div#card{
-    width: 30rem;
-    position: relative;
-    background-color: #fff;
-    border-radius: .5rem;
-  }
-  
-  section.modal div#card h2{
-    padding: 2rem;
-    margin: 0;
-    color: #0130ec;
-  }
-  
-  section.modal div#card a#fechar{
-    position: absolute;
-    right: 0;
-    top: 0;
-    font-size: 2rem;
-    color: #ff0101;
-    padding: 1.5rem;
-  }
-  
-  section.modal div#card a#fechar:hover{
-    color: #fd9b9b;
-  }
-  
-  section.modal div#card hr{
-    width: 90%;
-    margin: 0 auto;
-  }
-  
-  section.modal div#card p{
-    padding: 2rem;
-    text-align: center;
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
-  
-  section.modal div#card div#btns{
-    display: flex;
-    justify-content: center;
-    padding: 0 2rem 2rem 2rem;
-  }
-  
-  section.modal div#card div#btns a{
-    text-decoration: none;
-    padding: .9rem;
-    border-radius: .5rem;
-    width: 7rem;
-    text-align: center;
-  }
-  
-  section.modal div#card div#btns a.btn-cancelar{
-    background-color: #fff;
-    color: #ff0101;
-    border: solid 1px #ff0101;
-    margin-right: 1rem;
-    transition: all .5s ease-out;
-  }
-  
-  section.modal div#card div#btns a.btn-cancelar:hover{
-    background-color: #ff0101;
-    color: #fff;
-  }
-  
-  section.modal div#card div#btns a.btn-apagar{
-    background-color: #fff;
-    color: #0130ec;
-    border: solid 1px #0130ec;
-    transition: all .5s ease-out;
-  }
-  
-  section.modal div#card div#btns a.btn-apagar:hover{
-    background-color: #0130ec;
-    color: #fff;
-  }
-  

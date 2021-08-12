@@ -102,7 +102,7 @@ section div#button a{
 
 footer{
     padding:auto;
-    position: relative;
+    position: center;
     width: 100%;
 
 }
@@ -123,7 +123,15 @@ footer ul li a{
     font-size: 1.5vw;
     text-decoration: none;
 }
-
+footer ul li a#admin img{
+    padding: 2vw; 
+    margin-left: 5vw;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.5vw;
+    text-decoration: none;
+    width: 20%;
+}
 /*scrollbar*/
 ::-webkit-scrollbar {
     width: 10px;
@@ -137,4 +145,3 @@ footer ul li a{
 ::-webkit-scrollbar-thumb:hover {
     background: #219dbcc0;
   }
-  

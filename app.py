@@ -14,18 +14,10 @@ app.secret_key = 'Bluetrip' # Chave de criptografia para guardar sessão de logi
 #     "MAIL_PASSWORD": 'Bluetrip123'
 # }
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://uvcvgipg:FC3kd9kyfdoDqxXpRpAK06b9xO_oebIO@kesavan.db.elephantsql.com/uvcvgipg'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://otvtzlxv:fBUj8Z_IpFLUv9geGbDS5u3r_kAFQ8nd@kesavan.db.elephantsql.com/otvtzlxv'
 
 db = SQLAlchemy(app)
 
-
-# class NotificacaoEmail:
-#    def __init__ (self, destino, preco, descricao):
-#       self.destino = destino
-#       self.preco = preco
-#       self.descricao = descricao
-
-    
 class Viagem(db.Model):
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -127,8 +119,8 @@ def new():
       return redirect('/admin') # Redireciona para a rota admin
 
 # Rota edit que recebe um paremetro
-@app.route('/edit/<id>', methods=['GET', 'POST'])
-def edit(id):
+@app.route('/editar/<id>', methods=['GET', 'POST'])
+def editar(id):
    viagem = Viagem.query.get(id) # Busca um projeto no banco através do id
    viagens = Viagem.query.all()
    if request.method == "POST": # Se a requisição for um POST, faça:
@@ -139,9 +131,10 @@ def edit(id):
       viagem.link = request.form['link']
       viagem.tipo_viagem = request.form['tipo_viagem']
       db.session.commit() # Confirma a operação
-      return redirect('/listagem') #Redireciona para a rota adm
+      return redirect('/listagem')
+       #Redireciona para a rota adm
    # Renderiza a página adm.html passando o projetoEdit (projeto a ser editado)
-   return render_template('listagem.html', viagem=viagem, viagens=viagens)
+   return render_template('editar.html', viagem=viagem , viagens=viagens )
 
 
 # Rota delete
@@ -151,8 +144,7 @@ def delete(id):
    db.session.delete(viagemdel) # Apaga o projeto no banco de dados
    db.session.commit() # Confirma a operação
    flash('Viagem deletada do catálogo com sucesso!')
-   return render_template('listagem.html', viagemdel=viagemdel) #Redireciona para a rota adm
-
+   return redirect('/listagem') #Redireciona para a rota adm
 if __name__ == '__main__':
    db.create_all() # Cria o banco assim que a aplicação é ligada.
    app.run(debug=True)
